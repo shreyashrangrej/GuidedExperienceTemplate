@@ -1,0 +1,37 @@
+{
+  "steps": [
+    {
+      "id": "completeReturnSurvey",
+      "settings": {
+        "title": "{i18n>COMPLETE_RETURN_SURVEY_STEP_TITLE}",
+        "icon": ""
+      },
+      "view": "workzone2.workzonehr.sap.sf.workflow.returntoworkplace_employee.completePreReturnSurvey.CompletePreReturnSurvey"
+    },
+    {
+      "id": "reviewOfficeReadiness",
+      "settings": {
+        "title": "{i18n>REVIEW_OFFICE_GUIDELINES_STEP_TITLE}",
+        "icon": ""
+      },
+      "view": "workzone2.workzonehr.sap.sf.workflow.returntoworkplace_employee.reviewOfficeReadiness.ReviewOfficeReadiness"
+    },
+    {
+      "id": "completeVaccineCheck",
+      "settings": {
+        "title": "{i18n>COMPLETE_VACCINE_CHECK_TITLE}",
+        "icon": ""
+      },
+      "view": "workzone2.workzonehr.sap.sf.workflow.returntoworkplace_employee.completeVaccineCheck.CompleteVaccineCheck"
+    },
+    {
+      "id": "completeLearningCourses",
+      "settings": {
+        "title": "{i18n>COMPLETE_LEARNING_COURSES_STEP_TITLE}",
+        "icon": "",
+        "validated": false
+      },
+      "view": "workzone2.workzonehr.sap.sf.workflow.returntoworkplace_employee.completeLearningCourses.CompleteLearningCourses"
+    }
+  ]
+}

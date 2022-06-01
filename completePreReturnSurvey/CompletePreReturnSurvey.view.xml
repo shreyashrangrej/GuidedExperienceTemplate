@@ -1,0 +1,23 @@
+<mvc:View xmlns:mvc="sap.ui.core.mvc"
+  xmlns:l="sap.ui.layout"
+  xmlns:core="sap.ui.core"
+  xmlns:f="sap.f"
+  xmlns:html="http://www.w3.org/1999/xhtml"
+  xmlns="sap.m" height="100%" controllerName="workzone2.workzonehr.sap.sf.workflow.returntoworkplace_employee.completePreReturnSurvey.CompletePreReturnSurvey">
+
+  <VBox>
+    <Label text="{i18n>COMPLETE_RETURN_SURVEY_STEP_DESCRIPTION}" wrapping="true"/>
+    <Title text="{i18n>COMPLETE_RETURN_SURVEY_STEP_SURVEY_TITLE}" level="H2" class="sapUiMediumMarginTop" />
+    <!--Label id="displayDueDate" text="" /> -->
+    <HBox id="insertionPosition">
+    </HBox>
+    <Title text="{i18n>COMPLETE_RETURN_SURVEY_STEP_MEETING_TITLE}" level="H2" class="sapUiMediumMarginTop" />
+    <Label text="{i18n>COMPLETE_RETURN_SURVEY_STEP_MEETING_DESCRIPTION}" wrapping="true" />
+    <HBox backgroundDesign="Translucent" class="sapUiTinyMarginTop">
+      <CheckBox id="meetingCheckItem" text="{i18n>COMPLETE_RETURN_SURVEY_STEP_MEETING_CHECKLIST_LABEL}" class="sapUiTinyMargin" select="selectMeetingCheckItem" />
+    </HBox>
+  </VBox>
+
+  <html:br />
+
+</mvc:View>

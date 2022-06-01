@@ -1,0 +1,75 @@
+{
+  "reviewVaccineGuidance": [
+    {
+      "id": "companyVaccineGuidance"
+    }
+  ],
+  "updateVaccineStatus": [
+    {
+      "id": "VaccinatedYet",
+      "label": "VACCINE_YET_LABEL",
+      "type": "pickList",
+      "width": "30%",
+      "required": true,
+      "oDataEntity": "COVIDYESNO",
+      "mdfKey": "cust_vaccinestatus",
+      "picklistItem":[
+        {
+          "externalCode": "yes",
+          "label": "PICKLIST_COVIDYESNO_LABEL1"
+        },
+        {
+          "externalCode": "no",
+          "label": "PICKLIST_COVIDYESNO_LABEL2"
+        }
+      ],
+      "defaultSelectedKey": "no"
+    },
+    {
+      "id": "VaccineStatus",
+      "label": "VACCINE_STATUS_LABEL",
+      "type": "pickList",
+      "width": "30%",
+      "required": false,
+      "oDataEntity": "VACCINATIONSTATUS",
+      "mdfKey": "cust_vaccinationstatus",
+      "picklistItem":[
+        {
+          "externalCode": "FDV",
+          "label": "PICKLIST_VACCINATIONSTATUS_LABEL1"
+        },
+        {
+          "externalCode": "PD",
+          "label": "PICKLIST_VACCINATIONSTATUS_LABEL2"
+        },
+        {
+          "externalCode": "FV",
+          "label": "PICKLIST_VACCINATIONSTATUS_LABEL3"
+        },
+        {
+          "externalCode": "DC",
+          "label": "PICKLIST_VACCINATIONSTATUS_LABEL4"
+        }
+      ],
+      "defaultSelectedKey": "Planned"
+    },
+    {
+      "id": "FirstDoseDate",
+      "label": "FIRST_DOSE_DATE_LABEL",
+      "type": "date",
+      "width": "30%",
+      "required": false,
+      "odataEntity": null,
+      "mdfKey": "cust_firstdosagevaccinedate"
+    },
+    {
+      "id": "SecondDoseDate",
+      "label": "SECOND_DOSE_DATE_LABEL",
+      "type": "date",
+      "width": "30%",
+      "required": false,
+      "odataEntity": null,
+      "mdfKey": "cust_seconddosagevaccinedate"
+    }
+  ]
+}

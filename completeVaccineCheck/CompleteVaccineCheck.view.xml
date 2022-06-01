@@ -1,0 +1,61 @@
+<mvc:View xmlns="sap.m"
+  xmlns:core="sap.ui.core"
+  xmlns:mvc="sap.ui.core.mvc"
+  xmlns:html="http://www.w3.org/1999/xhtml" controllerName="workzone2.workzonehr.sap.sf.workflow.returntoworkplace_employee.completeVaccineCheck.CompleteVaccineCheck">
+  <VBox>
+    <Label text="{i18n>COMPLETE_VACCINE_CHECK_DESC}" wrapping="true"/>
+    <Title text="{items>/reviewVaccineGuidanceTitle}" level="H2" class="sapUiMediumMarginTop" />
+    <List items="{items>/reviewVaccineGuidance}" showSeparators="None" showNoData="false">
+      <CustomListItem>
+        <HBox class="sapUiTinyMarginBegin" renderType="Bare">
+          <CheckBox text="{items>checkBoxI18n}" class="sapUiTinyMarginEnd" select="selectVaccineCheckItem" selected="{items>selected}" />
+          <Link text="{items>linkText}" href="{items>link}" visible="{= ${items>linkVisible}}" target="_blank" class="sapUiTinyMarginTop" tooltip="{items>linkText}"/>
+          <Label text="{items>linkText}" visible="{= !${items>linkVisible}}" class="sapUiTinyMarginTop" tooltip="{items>linkText}"/>
+        </HBox>
+      </CustomListItem>
+    </List>
+    <VBox id="updateVaccineStatus">
+      <Title text="{items>/updateVaccineStatusTitle}" level="H2" class="sapUiMediumMarginTop"/>
+      <MessageStrip
+        text="{i18n>MDFOBJECT_NOT_EXIST_WARNING_INFO}"
+        type="Error"
+        showIcon="true"
+        class="sapUiSmallMarginTop"
+        visible="{= ${items>/mdfObjConfigCorrect} === false}"
+        >
+      </MessageStrip>
+      <List items="{items>/updateVaccineStatus}" showSeparators="None" showNoData="false" backgroundDesign="Transparent"
+        visible = "{= ${items>/mdfObjConfigCorrect} === true}">
+        <CustomListItem>
+          <VBox visible="{= ${items>type}==='pickList'}">
+            <Label text="{items>localizedLabel}" class="sapUiSmallMarginTop" required="{items>required}"/>
+            <ComboBox items="{items>picklistItem}" width="{items>width}" selectedKey="{items>selectedKey}"
+                      selectionChange="updatePicklistCache($event, {pickListId: ${items>id}})" valueState="{items>valueState}"
+                      >
+              <core:Item key="{items>key}" text="{items>text}"/>
+            </ComboBox>
+          </VBox>
+          <VBox visible="{= ${items>type}==='date'}">
+            <Label text="{items>localizedLabel}" class="sapUiSmallMarginTop" required="{items>required}"/>
+            <DatePicker placeholder="Date" width="{items>width}"
+                        value="{
+                          path: 'items>dateValue',
+                          type: 'sap.ui.model.odata.type.DateTime',
+                          constraints: {
+                            displayFormat: 'Date'
+                          },
+                          formatOptions: {
+                            UTC: true
+                          }
+                        }"
+                        enabled = "{items>enabled}"
+                        valueStateText="{i18n>SECOND_DOSE_BEFORE_FISRT_DOSE_ERROR_MESSAGE}"
+                        change="updateDatePickerCache($event, {datePickerId: ${items>id}})"
+                        valueState="{items>valueState}"/>
+          </VBox>
+        </CustomListItem>
+      </List>
+    </VBox>
+  </VBox>
+  <html:br />
+</mvc:View>

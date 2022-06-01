@@ -1,0 +1,21 @@
+{
+	"_version": "1.18.0",
+	"sap.artifact": {
+		"id": "workzone2.workzonehr.sap.sf.workflow.returntoworkplace_employee.workflow",
+		"type": "workflow",
+		"i18n": "i18n/i18n.properties",
+		"title": "{{TITLE}}",
+		"subTitle": "{{SUBTITLE}}",
+		"artifactVersion": {
+			"version": "2.0.0"
+		},
+		"shortTitle": "{{SHORTTITLE}}",
+		"info": "",
+		"description": "{{DESCRIPTION}}",
+		"tags": {
+			"keywords": [
+				"{{KEYWORD1}}"
+			]
+		}
+	}
+}

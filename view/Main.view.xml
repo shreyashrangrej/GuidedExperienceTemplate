@@ -1,0 +1,54 @@
+<mvc:View xmlns:mvc="sap.ui.core.mvc"
+  xmlns="sap.m"
+  xmlns:f="sap.f"
+  xmlns:l="sap.ui.layout" height="100%"
+  xmlns:html="http://www.w3.org/1999/xhtml" controllerName="workzone2.workzonehr.sap.sf.workflow.returntoworkplace_employee.controller.Main">
+  <NavContainer id="wizardNavContainer" height="40rem" navigate="navToCompletePage">
+    <Page id="descriptionPage" showHeader="false" backgroundDesign="Transparent">
+      <l:BlockLayout id="startBox" >
+        <l:BlockLayoutRow>
+          <l:BlockLayoutCell title="{i18n>DESC_TITLE}" titleAlignment="Left">
+            <FormattedText htmlText="{i18n>DESC_INFORMATION}" />
+            <Label text="{i18n>DESC_INFORMATION_2}" class="sapUiSmallMarginTop sapUiTinyMarginEnd" wrapping="true"/>
+            <Link text="{i18n>HELP_INFORMATION_TEXT}"  tooltip="{i18n>HELP_INFORMATION_TITLE}" href="https://help.sap.com/viewer/04877e17a5da4908a6fea94949e160b5/Cloud/en-US/beea1ea469d64cbda3c874a5fc229038.html"></Link>
+          </l:BlockLayoutCell>
+        </l:BlockLayoutRow>
+        <l:BlockLayoutRow>
+          <l:BlockLayoutCell>
+            <Button id="wizardStartButton" text="{i18n>WIZARD_START_BTN_LABEL}" type="Emphasized" press="navigateToWizardContentPage" enabled="{btnModel>/canReturn}"/>
+          </l:BlockLayoutCell>
+        </l:BlockLayoutRow>
+      </l:BlockLayout>
+      <f:IllustratedMessage id="loadError" visible="false" title="{i18n>LOAD_ERROR_TITLE}" description="{i18n>LOAD_ERROR_DESC}" illustrationSize="Auto" illustrationType="sapIllus-UnableToLoad">
+      </f:IllustratedMessage>
+    </Page>
+    <Page id="wizardContentPage" showHeader="false">
+      <content>
+        <Wizard id="rtwMainFlowWizard" complete="completeWizard" finishButtonText="{i18n>WIZARD_SUBMIT_BTN_LABEL}">
+        </Wizard>
+      </content>
+    </Page>
+    <Page id="completedPage" showHeader="false" backgroundDesign="Transparent">
+      <l:DynamicSideContent id="DynamicSideContent" equalSplit="true">
+        <l:BlockLayout id="BlockLayoutTwo" class="sapUiMediumMarginTop">
+          <l:BlockLayoutRow>
+            <l:BlockLayoutCell title="{i18n>WORKFLOW_STATUS_SUCCESS_TITLE}" titleAlignment="Left">
+              <Label text="{i18n>WORKFLOW_STATUS_SUCCESS_DESC}" />
+            </l:BlockLayoutCell>
+          </l:BlockLayoutRow>
+        </l:BlockLayout>
+        <l:sideContent>
+          <VBox id="qualtricsRight" class="qualtricsAnonymousSurvey" height="100%">
+            <l:BlockLayout class="sapUiMediumMarginTop">
+              <l:BlockLayoutRow>
+                <l:BlockLayoutCell title="{i18n>QUALTRICS_ANONYMOUS_TITLE}" titleAlignment="Left">
+                </l:BlockLayoutCell>
+              </l:BlockLayoutRow>
+            </l:BlockLayout>
+            <HBox id="insertionPosition" />
+          </VBox>
+        </l:sideContent>
+      </l:DynamicSideContent>
+    </Page>
+  </NavContainer>
+</mvc:View>

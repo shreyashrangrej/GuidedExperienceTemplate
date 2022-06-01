@@ -1,0 +1,67 @@
+<mvc:View xmlns:mvc="sap.ui.core.mvc" controllerName="workzone2.workzonehr.sap.sf.workflow.returntoworkplace_employee.completeLearningCourses.CompleteLearningCourses"
+  xmlns:l="sap.ui.layout"
+  xmlns:core="sap.ui.core"
+  xmlns:f="sap.f"
+  xmlns:grid="sap.ui.layout.cssgrid"
+  xmlns="sap.m"
+  xmlns:html="http://www.w3.org/1999/xhtml">
+
+  <VBox>
+    <Label text="{i18n>COMPLETE_LEARNING_COURSE_STEP_DESCRIPTION}" wrapping="true"/>
+    <Panel id="mandatoryList" expandable="true" expanded="true" headerText="{i18n>COMPLETE_LEARNING_COURSE_STEP_MANDATORY_COURSES}" width="100%" backgroundDesign="Transparent" class="sapUiSmallMarginTop">
+      <f:GridList id="mandatoryCourseList" items="{path: '/mandatoryCourses', sorter: { path: 'itemTitle', descending: false}}">
+        <f:customLayout>
+          <grid:GridBasicLayout gridTemplateColumns="repeat(auto-fit, minmax(14rem, 21rem))" gridGap="1rem" />
+        </f:customLayout>
+       <f:GridListItem class="sapUiTinyMargin">
+        <VBox height="100%" justifyContent="SpaceBetween">
+          <layoutData>
+            <FlexItemData growFactor="1" shrinkFactor="0" />
+          </layoutData>
+         <VBox backgroundDesign="Translucent">
+          	<Image id="courseImage" src="{itemThumbnailURI}" tooltip="{i18n>LEARNING_COURSE_IMAGE_TOOLTIP}" width="100%" height="12rem"/>
+         </VBox>
+         <VBox class="sapUiSmallMargin" height="50%">
+          <Title class="sapUiSmallMarginEnd sapUiTinyMarginTop" text="{itemTitle}" tooltip="{itemTitle}"/>
+          <Text text="{itemClassificationLabelValue}" />
+          <ObjectStatus text="{dueDate/requiredDateText}" state="{dueDate/requiredDateStatus}"/>
+          <HBox visible="{=${ratings} ? true: false}">
+          	<RatingIndicator maxValue="5" value="{ratings/averageRating}" tooltip="{ratings/averageRatingTooltip}" iconSize="1rem" editable="false" />
+          	<Label class="sapUiTinyMarginTop sapUiTinyMarginBegin" tooltip="{ratings/totalRatingTooltip}" text="{=${ratings/totalRating}>=0 ? '(' + ${ratings/totalRating} +')': ''}"></Label>
+          </HBox>
+          <Button text="{actionText}" press="onPressActionButton" visible="{=${actionText}!==''}"/>
+         </VBox>
+        </VBox>
+       </f:GridListItem>
+      </f:GridList>
+    </Panel>
+    <Panel id="optionalList" expandable="true" expanded="false" headerText="{i18n>COMPLETE_LEARNING_COURSE_STEP_OPTIONAL_COURSES}" width="100%" backgroundDesign="Transparent">
+      <f:GridList id="optionalCourseList" items="{path: '/optionalCourses', sorter: { path: 'itemTitle', descending: false}}">
+        <f:customLayout>
+          <grid:GridBasicLayout gridTemplateColumns="repeat(auto-fit, minmax(14rem, 21rem))" gridGap="1rem" />
+        </f:customLayout>
+       <f:GridListItem class="sapUiTinyMargin">
+        <VBox height="100%" justifyContent="SpaceBetween">
+          <layoutData>
+            <FlexItemData growFactor="1" shrinkFactor="0" />
+          </layoutData>
+         <VBox backgroundDesign="Translucent">
+          	<Image src="{itemThumbnailURI}" tooltip="{i18n>LEARNING_COURSE_IMAGE_TOOLTIP}" width="100%" height="12rem"/>
+         </VBox>
+         <VBox class="sapUiSmallMargin" height="50%">
+          <Title class="sapUiSmallMarginEnd sapUiTinyMarginTop" text="{itemTitle}" tooltip="{itemTitle}"/>
+          <Text text="{itemClassificationLabelValue}" />
+          <ObjectStatus text="{dueDate/requiredDateText}" state="{dueDate/requiredDateStatus}"/>
+          <HBox visible="{=${ratings} ? true: false}">
+          	<RatingIndicator maxValue="5" value="{ratings/averageRating}" tooltip="{ratings/averageRatingTooltip}" iconSize="1rem" editable="false"/>
+          	<Label class="sapUiTinyMarginTop sapUiTinyMarginBegin" tooltip="{ratings/totalRatingTooltip}" text="{=${ratings/totalRating}>=0 ? '(' + ${ratings/totalRating} +')': ''}"></Label>
+          </HBox>
+          <Button text="{actionText}" press="onPressActionButton" visible="{=${actionText}!==''}"/>
+         </VBox>
+        </VBox>
+       </f:GridListItem>
+      </f:GridList>
+    </Panel>
+  </VBox>
+  <html:br/>  
+</mvc:View>

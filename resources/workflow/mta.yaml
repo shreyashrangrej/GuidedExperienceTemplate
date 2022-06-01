@@ -1,0 +1,17 @@
+ID: mta
+_schema-version: "2.1"
+version: 0.0.1
+modules:
+  - name: RtW_employee
+    type: com.sap.application.content
+    path: RtW_employee
+    requires:
+      - name: workflow_mta
+        parameters:
+          content-target: true
+resources:
+  - name: workflow_mta
+    parameters:
+      service-plan: standard
+      service: workflow
+    type: org.cloudfoundry.existing-service

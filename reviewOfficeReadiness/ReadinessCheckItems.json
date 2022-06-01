@@ -1,0 +1,27 @@
+{
+  "reviewOfficeGuidelines": [
+    {
+      "id": "generalOfficeGuidelines"
+    },
+    {
+      "id": "cafeteriaGuidelines"
+    },
+    {
+      "id": "conferenceRoomGuidelines"
+    },
+    {
+      "id": "deskEtiquetteGuidelines"
+    },
+    {
+      "id": "parkingSpaceGuidelines"
+    }
+  ],
+  "signMandatoryForms": [
+    {
+      "id": "returnToWorkArrangementsForm"
+    },
+    {
+      "id": "employeeHealthScreeningForm"
+    }
+  ]
+}

@@ -1,0 +1,167 @@
+{
+  "_version": "1.18.0",
+  "sap.app": {
+    "id": "workzone2.workzonehr.sap.sf.workflow.returntoworkplace_employee",
+    "type": "card",
+    "i18n": "i18n/i18n.properties",
+    "title": "{{CARD_TITLE}}",
+    "subTitle": "{{CARD_SUBTITLE}}",
+    "applicationVersion": {
+      "version": "2.0.0"
+    },
+    "shortTitle": "",
+    "info": "",
+    "description": "{{CARD_DESCRIPTION}}",
+    "tags": {
+      "keywords": [
+        "{{CARD_KEYWORD_1}}",
+        "{{CARD_KEYWORD_2}}",
+        "{{CARD_KEYWORD_3}}",
+        "{{CARD_KEYWORD_4}}",
+        "{{CARD_KEYWORD_5}}"
+      ]
+    }
+  },
+  "sap.ui": {
+    "technology": "UI5",
+    "icons": {
+      "icon": "sap-icon://building"
+    }
+  },
+  "sap.ui5": {
+    "rootView": {
+      "viewName": "workzone2.workzonehr.sap.sf.workflow.returntoworkplace_employee.view.Main",
+      "type": "XML",
+      "async": true,
+      "id": "app"
+    },
+    "dependencies": {
+      "minUI5Version": "1.84",
+      "libs": {
+        "sap.m": {},
+        "sap.ui.core": {},
+        "sap.ui.layout": {},
+        "sap.ui.unified": {},
+        "sap.f": {}
+      }
+    },
+    "models": {
+      "i18n": {
+        "type": "sap.ui.model.resource.ResourceModel",
+        "settings": {
+          "bundleName": "workzone2.workzonehr.sap.sf.workflow.returntoworkplace_employee.i18n.i18n"
+        }
+      }
+    },
+    "resources": {
+      "css": [
+        {
+          "uri": "css/style.css"
+        }
+      ]
+    }
+  },
+  "sap.card": {
+    "type": "Component",
+    "extension": "extension/CompleteLearningCoursesExtension",
+    "designtime": "dt/designtime",
+    "configuration": {
+      "destinations": {
+        "lmsDestination": {
+          "name": "Learning_API",
+          "label": "{{LMS_DESTINATION}}"
+        },
+        "sfDestination": {
+          "name": "SuccessFactors_API",
+          "label": "{{SF_DESTINATION}}"
+        },
+        "wfDestination": {
+          "name": "Workflow_API",
+          "label": "{{WF_DESTINATION}}"
+        }
+      },
+      "parameters": {
+        "loginUser": {
+          "value": "{context>sap.successfactors/currentUser/id/value}",
+          "label": "login SF user ID",
+          "type": "string",
+          "visible": false
+        },
+        "webHost": {
+          "value": "{context>sap.workzone/currentCompany/webHost/value}",
+          "type": "string",
+          "visible": false
+        },
+        "reviewOfficeGuidelinesTitle": {
+          "value": "{{REVIEW_OFFICE_GUIDELINES_STEP_GUIDELINES_TITLE}}"
+        },
+        "generalOfficeGuidelinesLabel": {
+          "value": "{{REVIEW_OFFICE_GUIDELINES_GENERAL_OFFICE_GUIDELINES_CHECKBOX_TEXT}}"
+        },
+        "generalOfficeGuidelinesURL": {},
+        "cafeteriaGuidelinesLabel": {
+          "value": "{{REVIEW_OFFICE_GUIDELINES_CAFETERIA_GUIDELINES_CHECKBOX_TEXT}}"
+        },
+        "cafeteriaGuidelinesURL": {},
+        "conferenceRoomGuidelinesLabel": {
+          "value": "{{REVIEW_OFFICE_GUIDELINES_CONFERENCE_ROOM_GUIDELINES_CHECKBOX_TEXT}}"
+        },
+        "conferenceRoomGuidelinesURL": {},
+        "deskEtiquetteGuidelinesLabel": {
+          "value": "{{REVIEW_OFFICE_GUIDELINES_DESK_ETIQUETTE_GUIDELINES_CHECKBOX_TEXT}}"
+        },
+        "deskEtiquetteGuidelinesURL": {},
+        "parkingSpaceGuidelinesLabel": {
+          "value": "{{REVIEW_OFFICE_GUIDELINES_PARKING_SPACE_GUIDELINES_CHECKBOX_TEXT}}"
+        },
+        "parkingSpaceGuidelinesURL": {},
+        "signMandatoryFormsTitle": {
+          "value": "{{SIGN_MANDATORY_FORMS_TITLE}}"
+        },
+        "returnToWorkArrangementsFormLabel": {
+          "value": "{{REVIEW_OFFICE_GUIDELINES_ARRAGEMENT_FORM_CHECKBOX_TEXT}}"
+        },
+        "returnToWorkArrangementsFormURL": {},
+        "employeeHealthScreeningFormLabel": {
+          "value": "{{REVIEW_OFFICE_GUIDELINES_HEALTH_SCREEN_FORM_CHECKBOX_TEXT}}"
+        },
+        "vaccineStepEnable": {
+          "value": false
+        },
+        "reviewVaccineGuidanceTitle": {
+          "value": "{{REVIEW_VACCINE_GUIDANCE_TITLE}}"
+        },
+        "companyVaccineGuidanceLabel":{
+          "value": "{{REVIEW_VACCINE_GUIDANCE_CHECKBOX_TEXT}}"
+        },
+        "companyVaccineGuidanceURL": {},
+        "updateVaccineStatusTitle": {
+          "value": "{{UPDATE_VACCINE_STATUS_TITLE}}"
+        },
+        "mdfObjectVaccine": {
+          "value": "cust_COVID_19_VACCINE_TRACKING"
+        },
+        "employeeHealthScreeningFormURL": {},
+        "qualtricsURL": {
+          "value": ""
+        },
+        "mandatoryCourses": {
+          "value": []
+        },
+        "optionalCourses": {
+          "value": []
+        },
+        "lastPageQualtricsURL": {
+          "value": ""
+        }
+      }
+    },
+    "header": {
+      "title": "{{CARD_TITLE_DEFAULT_VALUE}}",
+      "subTitle": "{{CARD_SUBTITLE}}",
+      "icon": {
+        "src": "sap-icon://building"
+      }
+    }
+  }
+}
